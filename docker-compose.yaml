@@ -1,0 +1,18 @@
+#Tao Docker image
+version: '3.8'
+services:
+  dev-database:
+    image: postgres:16.0
+    container_name: dev-database
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Abc12345678
+      POSTGRES_DB: mydb
+    networks:
+      - nestjs-network
+networks:
+  nestjs-network:
+#docker compose up -d
+#Chay container: docker compose up -d dev-database -d
